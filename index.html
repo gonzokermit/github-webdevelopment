@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <!--Meta Tags-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Lokal Bootstrap CSS -->
+        <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+
+        <!-- CDN wenn public -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!-- Icons -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+
+        <title>First Website</title>
+
+    </head>
+    <body data-spy="scroll" data-target="#navbarMenu" data-offset="120">
+        
+        <!-- Start Navigation Bar    sticky-top   fixed-top   mb-2 -->
+        <nav id="navbarMenu" class="navbar navbar-expand-md navbar-dark bg-dark sticky-top box-shadow">
+            <a class="navbar-brand" href="#header">GonzoKermit</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false" aria-label="Navigation ausklappen">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse" data-toggle="collapse" data-target="#navbarCollapse.show">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#header">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="files/images.html">Bilder</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="files/python.html">Python</a>
+                            <a class="dropdown-item" href="#">Link 2</a>
+                            <a class="dropdown-item" href="#">Link 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#later">Later</a>
+                    </li>
+                    
+                </ul>
+                <!--<form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Suche nach...">
+                    <button type="submit" class="btn btn-outline-primary my-2 my-sm-0">Suchen</button>
+                </form>-->
+            </div>
+        </nav> 
+        <!-- Ende Navigation -->
+
+        <!--Start Header-->
+        <!--<div class="jumbotron-fluid align-items-center" id="header">
+            <div class="container text-white text-uppercase">
+                <h1>Erste Webseite</h1>
+                <p>Gonzo Kermit</p>
+                <a class="btn btn-secondary" role="button" href="#about">Start</a>
+            </div>
+        </div>-->
+        <div class="py-5 text-white text-uppercase text-center" id="header">
+            <div class="container py-5">
+                <div class="row mt-5 mb-5">
+                    <div class="col-sm-4">
+                        <h1>Erste Website</h1>
+                        <h5>Gonzo Kermit</h5>
+                        <p class="mt-5">Das ist das Ergebnis eines Versuches eine Webseite zu erstellen.</p>
+                    </div>
+                    <div class="col-sm-8">
+                        <img src="img/iceland1280.jpg" class="img-fluid rounded" alt="about-picture">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Ende Header-->
+        
+        <!--Start About-->
+        <div class="bg-light py-5" id="about">
+            <!-- Content Container -->
+            <div class="container text-center py-5">
+                <h3 class="text-center text-uppercase display-4">About Me</h3>
+                <h6>Ein paar Dinge ueber Gonzo Kermit</h6>
+                <div class="row mt-5 mb-5">
+                    <div class="col-sm-4">
+                        <h4 class="mb-3">Name: Gonzo Kermit</h4>
+                        <img src="img/150x150.png" class="img-fluid img-feature img-thumbnail mx-auto d-block mb-4 box-shadow" alt="about-photo">
+                        <p class="mb-3">Test um zu sehen, ob ich schon komplett verbloedet bin.</p>
+                        <p class="mb-3">Von 100 immer 7 abziehen. Musste angeblich der schon ziemlich alte US-Praesidet Ronald Reagen waehrend seiner Praesidentschaft jeden Tag machen.</p>
+                        <a href="https://youtu.be/PorSWZMkqhU" class="btn btn-secondary mb-5">Rubik Youtube</a>
+                        <a href="https://github.com/gonzokermit/gitbub-python" class="btn btn-secondary mb-5">GitHub</a>
+                        <!--<a href="files/rubik1.mp4" class="btn btn-secondary mb-5">Rubik</a>-->
+                    </div>
+                    <div class="col-sm-4">
+                        <h4 class="mb-5">About Me</h4>
+                        <p class="mb-2">Das ist meine erste Webseite. Erstellt mit html5, css3, javascript, jQuery und bootstrap4.</p>
+                        <p class="mb-3">Da ich absolut kein "Design Freak" bin, ist die Seite nicht schoen.</p>
+                        <p class="mb-3">Die Webseite ist auch noch unvollständig z.B. manche Links. Soll auch nicht professionell sein.</p>
+                        <p class="mb-1">Nichts ist schwerer und erfordert mehr Charakter, als sich in offenem Gegensatz zu seiner Zeit zu befinden und laut zu sagen: Nein!</p>
+                        <p class="mb-5">Kurt Tucholsky</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h4 class="mb-5">Hosting</h4>
+                        <p>Die Webseite ist beim Free-Hoster Netlify gehostet</p>
+                        <p>Einfach per Github oder per Drag and Drop.</p>
+                        <p class="mb-5">More speed. Less spend. 900,000+ developers & businesses use Netlify to run web projects at global scale—without servers, devops, or costly infrastructure.</p>
+                        <p class="mb-5">Link open new Tab</p>
+                        <a href="www.netlify.org" class="btn btn-secondary mb-5">Netlify</a>
+                    </div>
+                </div>
+                <h3 class="text-center text-uppercase display-4">Favorite Operating Systems</h3>
+                <div class="row mt-5 mb-1">
+                    <div class="col-sm-4 py-5">
+                        <h3 class="text-uppercase">Debian Linux</h3>
+                        <p class="lead">Open a new Tab</p>
+                        <a class="btn btn-secondary btn-md btn-block" href="https://www.debian.org/" target="_blank">Debian Website</a>
+                    </div>
+                    <div class="col-sm-4 py-5">
+                        <h3 class="text-uppercase">Kali Linux</h3>
+                        <p class="lead">Open a new Tab</p>
+                        <a class="btn btn-secondary btn-md btn-block" href="https://www.kali.org/" target="_blank">Kali Linux Website</a> 
+                    </div>
+                    <div class="col-sm-4 py-5">
+                        <h3 class="text-uppercase">Bunsenlabs</h3>
+                        <p class="lead">Open a new Tab</p>
+                        <a class="btn btn-secondary btn-md btn-block" href="https://www.bunsenlabs.org/" target="_blank">Bunsenlabs Website</a> 
+                    </div>        
+                </div>
+            </div> 
+            <!-- Ende Content Container -->
+        </div> 
+        <!--Ende About-->
+
+        <!--Start Portfolio-->
+        <div class="bg-secondary py-5" id="portfolio">
+            <!-- Content Container -->
+            <div class="container text-center py-5">
+                <h3 class="text-center text-uppercase display-4">Portfolio</h3>
+                <h6>Ein paar Programmierarbeiten und Code-snippets</h6>
+                <div class="row mt-5">
+                    <div class="col-sm-4 py-5">
+                        <a href="files/linux.html" target="_blank">
+                            <img src="img/linux250x150.png" class="img-thumbnail" alt="">
+                        </a>    
+                    </div>
+                    <div class="col-sm-4 py-5">
+                        <a href="files/python-snippet-1.pdf" target="_blank">
+                            <img src="img/python250x150.png" class="img-thumbnail" alt="">
+                        </a>    
+                    </div>
+                    <div class="col-sm-4 py-5">
+                        <a href="files/js-snippet-1.pdf" target="_blank">
+                            <img src="img/js250x150.png" class="img-thumbnail" alt="">
+                        </a>    
+                    </div>
+                    <div class="col-sm-4 py-5">
+                        <a href="files/windows.html" target="_blank">
+                            <img src="img/windows.png" class="img-thumbnail" alt="">
+                        </a>    
+                    </div>
+                    <div class="col-sm-4 py-5">
+                        <a href="files/jsprozentboot.html">
+                            <img src="img/jsprozent250x150.png" class="img-thumbnail" alt="">
+                        </a>    
+                    </div>
+                    <div class="col-sm-4 py-5">
+                        <a href="files/jsbmiboot.html">
+                            <img src="img/bmi250x150.png" class="img-thumbnail" alt="">
+                        </a>    
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer bg-dark text-white" id="footer">
+            <div class="container pt-5 pb-4">
+                <div class="row my-5">
+                    <div class="col-sm-4">
+                        <h4 class="mb-3">Navigation</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#header" class="text-white">Home</a></li>
+                            <li><a href="#about" class="text-white">About</a></li>
+                            <li><a href="#portfolio" class="text-white">Portfolio</a></li>
+                            <li><a href="files/images.html" class="text-white">Bilder</a></li>
+                            <li><a href="#later" class="text-white">later</a></li>
+                        </ul>
+                    </div>
+                    <!--<div class="col-sm-3">
+                        <h4 class="mb-3">Über uns</h4>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                    </div>-->
+                    <div class="col-sm-4">
+                        <h4 class="mb-3">Kontakt</h4>
+                        <ul class="list-unstyled">
+                            <li><span class="fa fa-envelope"></span> beispieltest@gmail.com</li>
+                            <li><span class="fa fa-phone-square"></span> +00 0123 456789</li>
+                            <li><span class="fa fa-map-marker"></span> 32052 Herford</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <h4 class="mb-3">Rechtliche Hinweise</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Impressum</a></li>
+                            <li><a href="#" class="text-white">Datenschutz</a></li>
+                            <li><a href="#" class="text-white">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- Ende Footer -->
+
+        <!--Start Copyright-->
+        <footer class="footer-copyright bg-dark">
+            <div class="footer-copyright text-center text-white py-3">© 2020 Copyright: Gonzo Kermit</div>
+        </footer>
+
+
+        <!--Lokal-->
+        <!-- Optionales JavaScript -->
+        <!-- jQuery, dann Popper.js, dann Bootstrap JS -->
+        <!--<script src="js/jquery-3.5.1.slim.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>-->
+
+        <!--CDN wenn public-->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body> 
+</html>

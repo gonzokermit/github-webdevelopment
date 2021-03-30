@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samroeng Gallery</title>
+        <link rel="stylesheet" href="text/css" href="style.css">
+    </head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lato', sans-serif;
+            background: #666;
+        }
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            color: #fff;
+        }
+        .container {
+            width: 100%;
+            display: grid;
+            grid-auto-flow: dense;
+            grid-template: "1fr 1fr 1fr" 50vh
+                           "1fr 1fr 1fr" 50vh
+                           "1fr 1fr 1fr" 50vh
+                           "1fr 1fr 1fr" 50vh
+                           "1fr 1fr 1fr" 50vh
+                           "1fr 1fr 1fr" 50vh;
+            grid-gap: 5px; 
+        }
+        .container .box {
+            position: relative;
+            border-radius: 20px;
+            background: #ccc;
+        }
+        .container .box.a, .box.b, .box.c, .box.d, .box.e, .box.f, .box.k {
+            grid-row: span 2;
+        }
+        /*.container .box.b, .box.c, .box.f {
+            grid-column: span 2;
+        }*/
+        .container .box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+        /*.container .box.a {
+            grid-row: span 2;
+        }*/
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .container {
+                grid-template: "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px
+                               "1fr" 250px;
+            }
+        }
+    </style>
+    <body>
+        <h1>Gallery Samroeng</h1>
+        <div class="container">
+            <div class="box a">
+                <a href="images/family1.jpg"><img src="images/family1.jpg"></a>
+            </div>
+            <div class="box b">
+                <a href="images/family4.jpg"><img src="images/family4.jpg"></a>
+            </div>
+            <div class="box c">
+                <a href="images/family11.jpg"><img src="images/family11.jpg"></a>
+            </div>
+            <div class="box d">
+                <a href="images/family8.jpg"><img src="images/family8.jpg"></a>
+            </div>
+            <div class="box e">
+                <a href="images/family10.jpg"><img src="images/family10.jpg"></a>
+            </div>
+            <div class="box f">
+                <a href="images/family9.jpg"><img src="images/family9.jpg"></a>
+            </div>
+            <div class="box k">
+                <a href="images/port2.jpg"><img src="images/port2.jpg"></a>
+            </div>
+            <div class="box g">
+                <a href="images/family6.jpg"><img src="images/family6.jpg"></a>
+            </div>
+            <div class="box j">
+                <a href="images/family7.jpg"><img src="images/family7.jpg"></a>
+            </div>
+            <div class="box h">
+                <a href="images/family2.jpg"><img src="images/family2.jpg"></a>
+            </div>
+            <div class="box i">
+                <a href="images/family3.jpg"><img src="images/family3.jpg"></a>
+            </div>
+            
+        </div>
+    </body>
+</html>

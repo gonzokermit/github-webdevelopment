@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <!-- Meta Tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Lokal Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+
+        <!-- CDN wenn public -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <title>Linux</title>
+        </head>
+        <style>
+            body {
+                background: #b2bec3;
+            }
+            .container-fluid {
+                background: lightgray;
+            }
+            h1, h5, h6, p {
+                font-family: 'Lato', sans-serif;
+            }
+            h5, h6 {
+                text-transform: uppercase;
+                /*letter-spacing: .1rem;*/
+                font-weight: 800;
+                padding-left: 3%;
+            }
+            h1 {
+                font-weight: 800;
+            }
+            p {
+                padding-left: 5%;
+            }
+    </style>
+    <body>
+        <div class="container-fluid pt-5">
+            <h1 class="text-uppercase text-center">Windows</h1>
+            <h3 class="text-center">Einige Sachen zu Windows Betriebssystemen</h3>
+        </div>
+        <div class="container-fluid pt-3">
+            <h6 class="text-uppercase">Wichtige Verzeichnisse</h6>
+            <p>c:\Windows\System32</p>
+            <p>c:\Windows\SysWOW64</p>
+            <h6>Windows Treiber</h6>
+            <p class="pb-3">C:\Windows\System32\DriverStore</p>
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>Windows 10 Admin-Konto aktivieren</h6>
+            <p>net user administrator /active:yes</p>
+            <p>net user administrator [Kennwort]</p>
+            <h6>Windows 10 Admin-Konto deaktivieren</h6>
+            <p class="pb-3">net user administrator /active:no</p>
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>Als Administrator in Windows anmelden</h6>
+            <h6>Befehlszeile lokal</h6> 
+            <p>runas /user:Rechnername\administrator Programmdatei ---> Kennwort eingeben</p>
+            <p>z.B. runas /user:pc-123\administrator cmd.exe ---> Kennwort eingeben</p>
+            <h6>Befehlszeile Domain</h6>
+            <p>runas /user:Domain\administrator \\Server\Verzeichnis\Programmdatei ---> Kennwort eingeben</p>
+            <p>z.B. runas /user:ads\administrator \\192.168.55.123\itservce\cmd.exe ---> Kennwort eingeben</p>
+            <h6>Programm als Administrator ausfuehren</h6>
+            <p>Programm.exe rechte Muastaste</p>
+            <p class="pb-3">Als Administrator ausfuehren</p>
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>Windows Netzwerkbefehle</h6>
+            <h6>Konfiguration TCP/IP-Netzwerk</h6>
+            <p>ipconfig /all</p>
+            <h6>Routing anzeigen</h6> 
+            <p>route print</p>
+            <h6>Eine satische Route hinzufuegen</h6>
+            <p>route add Ziel-Netzwerk Subnetzmaske Gateway-Rechner-IP</p>
+            <p>z.B. route add 192.168.55.0 255.255.255.0 192.168.55.1</p>
+            <p>Soll die Route persistent eingetragen werden</p>
+            <p>route add -p Ziel-Netzwerk Subnetzmaske Gateway-Rechner-IP</p>
+            <p>z.B. route add -p 192.168.55.0 255.255.255.0 192.168.55.1</p>
+            <h6>Eine statische Route entfernen</h6>
+            <p>route delete Ziel-Netzwerk</p>
+            <p>z.B. route delete 192.168.55.0</p>
+            <h6>Belegte Ports anzeigen</h6>
+            <p>netstat -ano | find /i "Abhoeren" oder "Listen"</p>
+            <h6>MAC-Adressen der Netzwerkkarte anzeigen</h6>
+            <p class="pb-3">getmac</p>
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>Allgemeine Windows-Befehle</h6>
+            <h6>Systemsteuerung aufrufen</h6> 
+            <p>control.exe</p>
+            <h6>Autostart-Manager aufrufen</h6>
+            <p>msconfig.exe</p>
+            <h6>Windows Dienste aufrufen</h6>
+            <p>services.msc</p>
+            <h6>Ueberpruefung der Systemdateien</h6>
+            <p>sfc /scannow</p>
+            <h6>MAC-Adressen der Netzwerkkarte anzeigen</h6>
+            <p class="pb-3">getmac</p>
+        </div>
+        
+
+        <!-- Optionalen JavaScript Alte Dateien-->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!--<script src="js/jquery-3.3.1.slim.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>-->
+
+        <!--Lokal-->
+        <!-- Optionales JavaScript -->
+        <!-- jQuery, dann Popper.js, dann Bootstrap JS -->
+        <!--<script src="js/jquery-3.5.1.slim.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>-->
+
+        <!--CDN wenn public-->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
+</html>

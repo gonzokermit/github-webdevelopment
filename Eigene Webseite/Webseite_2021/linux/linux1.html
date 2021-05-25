@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/b069149807.js" crossorigin="anonymous"></script>
+        <title>Linux</title>
+    </head>
+    <body>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: sans-serif;
+                background-color: #4B0082;
+            }
+            div {
+                border: 1px solid #494949;
+                padding: 5px;
+                margin: 10px;
+                background-color: #E0E0E0;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .container .ueberschrift-box h1, h2{
+                text-align: center;
+            }
+            .box {
+                background-color: #E0E0E0;
+                /*box-shadow: 5px 5px 10px rgb(197, 195, 195);*/
+            }
+            .box h3 {
+                font-weight: 600;
+                font-style: italic;
+                color: 	#4B0082;
+                /*text-shadow: 0.5px 0.5px 1px #ff0157;*/
+            }
+            .box p {
+                margin-left: 5px;
+            }
+        </style>
+        <div class="container">
+            <div class="ueberschrift-box">
+                <h1>Linux Kommandos</h1>
+                <h2>Linux Kommandos werden teilweise mit root-Rechten ausgefuehrt</h2>
+            </div>
+            <div class="box">
+                <h3>Wichtige Verzeichnise</h3>
+                <p>/lib/modules/kernelversion/kernel/drivers/</p>
+            </div>
+
+            <div class="box box1">
+                <h3>apt Kommandos</h3>
+                <p>apt update</p>
+                <p>apt upgrade</p>
+                <p>apt dist-upgrade</p>
+                <h3>Pakete deninstallieren</h3>
+                <p>apt remove Paketname</p>
+                <h3>Paket mit Konfigurationsdateien</h3>
+                <p>apt purge Paketname</p>
+                <h3>Paket Cache leeren /var/cache/apt/archives/</h3>
+                <p>apt autoclean -> Pakete, die nicht mehr in den Quellen verfügbar sind, werden geloescht</p>
+                <p>apt clean -> Entfernen von zur Installation heruntergeladenen Paketen</p>
+                <h3>Pakete ausschliessen</h3>
+                <p>z.B. apt-mark hold linux-headers-5.4.0-kali-amd64</p>
+                <p>z.B. apt-mark unhold linux-headers-5.4.0-kali-amd64</p>
+                <h3>Paket nach Suchbegriff suchen</h3>
+                <p>z.B. apt search linux-headers-5.4</p>
+                <h3>Installierte Pakete nach Suchmuster suchen</h3>
+                <p>z.B. apt list --installed linux-image*</p>
+            </div>    
+
+            <div class="box box2">
+                <h3>Windows Laufwerk mounten</h3>
+                <p>Auf dem Windows System muss ein Laufwerk freigegeben sein.</p>
+                <p>Verzeichnis auf dem Linux System anlegen z.B.:</p>
+                <p>mkdir /mnt/windows</p>
+                <p>mount -t cifs //Windows-System/Freigabe /mnt/windows -o username=test,passwd=test</p>
+                <p>z.B. mount -t cifs //192.168.55.21/test /mnt/windows -o username=test,passwd=test</p>
+            </div>
+            <div class="box box3">
+                <h3>Verzeichnisse und Dateien</h3>
+                <h3>Verzeichnis / Dateien suchen</h3>
+                <p>find /Pfad -name Verzeichnis/Dateiname</p>
+                <h3>Dateien mit bestimmten Suchmuster suchen</h3>
+                <p>find /Pfad -type f -exec grep -l "Suchmuster" {} \;</p>
+                <h3>Dateien nach Groesse suchen</h3>
+                <p>find /Pfad -type f -size +50000k -exec ls -l --block-size=M {} \;</p>
+            </div>
+            <div class="box box4">
+                <h3>Enable Monitor Mode TP-Link w722n v2/3 Kernel 5.4</h3>
+                <hr>
+                <h3>[Download and Installation]</h3>
+                <p>sudo apt update</p>
+                <p>sudo apt install bc</p>
+                <p>sudo rmmod r8188eu.ko</p>
+                <p>git clone https://github.com/aircrack-ng/rtl8188eus</p>
+                <p>cd rtl8188eus</p>
+                <p>sudo -i</p>
+                <p>echo "blacklist r8188eu.ko" > "/etc/modprobe.d/realtek.conf"</p>
+                <p>exit</p>
+                <p>make</p>
+                <p>sudo make install</p>
+                <p>sudo modprobe 8188eu</p>
+                <h3>[Enabling Monitor Mode]</h3> 
+                <p>sudo airmon-ng check kill</p>
+                <p>sudo ip link set wlan0 down</p>
+                <p>sudo iw dev wlan0 set type monitor</p>    
+                <h3>[Testing Packet Injection]</h3>
+                <p>aireplay-ng --test wlan0</p>
+                <p>sudo aireplay -9 wlan0</p>
+            </div>
+            <div class="box box5">
+                <h3>NetworkManager Statische IP konfgurieren</h3>
+                <p>nmcli connection show</p>
+                <p>sudo nmcli connection modify UUID IPv4.address 192.168.55.123/24</p>
+                <p>sudo nmcli connection modify UUID IPv4.gateway 192.168.55.1</p>
+                <p>sudo nmcli connection modify UUID IPv4.dns 8.8.8.8</p>
+                <p>sudo nmcli connection modify UUID IPv4.method manuel</p>
+                <p>sudo nmcli connection down UUID</p>
+                <p>sudo nmcli connection up UUID</p>
+            </div>
+            <div class="box box6">
+                <h3>Netzwerk</h3>
+                <h3>IP-Adresse anzeigen</h3>
+                <p>ip addr show</p>
+                <h3>IP-Adresse entfernen</h3>
+                <p>ip addr delete 192.168.55.11/24 dev eth0</p>
+                <h3>IP-Adresse manuell vergeben</h3>
+                <p>ip addr add 192.168.55.11/24 dev eth0</p>
+                <h3>Default Gateway IP-Adresse anzeigen</h3>
+                <p>ip route show</p>
+                <h3>Gateway IP-Adresse entfernen</h3>
+                <p>ip route add default via 192.168.0.1 dev wlan0</p>
+                <h3>Gateway IP-Adresse manuel vergeben</h3>
+                <p>ip route add default via 192.168.0.1 dev wlan0</p>
+            </div>
+            <div class="box box7">
+                <h3>Systemd</h3>
+                <h3>systemd Dienst status anzeigen</h3>
+                <p>systemctl status application.service</p>
+                <h3>systemd Dienst starten</h3>
+                <p>systemctl start application.service</p>
+                <h3>systemd Dienst stoppen</h3>
+                <p>systemctl stop application.service</p>
+                <h3>systemd Dienst restart oder reload</h3>
+                <p>systemctl restart/reload application.service</p>
+                <h3>systemd Dienst beim booten starten oder nicht mehr starten</h3>
+                <p>systemctl enable application.service</p>
+                <p>systemctl disabel application.service</p>
+            </div>
+            <div class="box box8">
+                <h3>Zeit und Datum</h3>
+                <h3>Wichtige Dateien</h3>
+                <p>/usr/share/zoneinfo</p>
+                <h3>Zeit, Datum, Zeitzone abfragen</h3>
+                <p>timedatectl status</p>
+                <h3>Zeitzonen anzeigen</h3>
+                <p>timedatectl list-timezones | grep -i berlin</p>
+            </div>
+        </div>
+    </body>
+</html>

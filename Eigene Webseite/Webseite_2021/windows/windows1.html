@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/b069149807.js" crossorigin="anonymous"></script>
+        <title>Windows</title>
+    </head>
+    <body>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: sans-serif;
+                background-color: #4B0082;
+            }
+            div {
+                border: 1px solid #494949;
+                padding: 5px;
+                margin: 10px;
+                background-color: #E0E0E0;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .container .ueberschrift-box h1, h2{
+                text-align: center;
+            }
+            .box {
+                background-color: #E0E0E0;
+                /*box-shadow: 5px 5px 10px rgb(197, 195, 195);*/
+            }
+            .box h3 {
+                font-weight: 600;
+                font-style: italic;
+                color: 	#4B0082;
+                /*text-shadow: 0.5px 0.5px 1px #ff0157;*/
+            }
+            .box p {
+                margin-left: 5px;
+            }
+        </style>
+        <div class="container">
+            <div class="ueberschrift-box">
+                <h1>Windows</h1>
+                <h2>Einige nuetzliche Dinge zum Windows Betriebssystem</h2>
+            </div>
+            <div class="box">
+                <h3>Wichtige Verzeichnisse</h3>
+                <p>c:\Windows\System32</p>
+                <p>c:\Windows\SysWOW64</p>
+                <h3>Windows Treiber</h3>
+                <p>C:\Windows\System32\DriverStore</p>
+            </div>
+
+            <div class="box box1">
+                <h3>Windows 10 Admin-Konto aktivieren</h3>
+                <p>net user administrator /active:yes</p>
+                <p>net user administrator [Kennwort]</p>
+                <h3>Windows 10 Admin-Konto deaktivieren</h3>
+                <p>net user administrator /active:no</p>
+            </div>
+            <div class="box box2">
+                <h3>Als Administrator in Windows anmelden</h3>
+                <h3>Befehlszeile lokal</h3> 
+                <p>runas /user:Rechnername\administrator Programmdatei ---> Kennwort eingeben</p>
+                <p>z.B. runas /user:pc-123\administrator cmd.exe ---> Kennwort eingeben</p>
+                <h3>Befehlszeile Domain</h3>
+                <p>runas /user:Domain\administrator \\Server\Verzeichnis\Programmdatei ---> Kennwort eingeben</p>
+                <p>z.B. runas /user:ads\administrator \\192.168.55.123\itservce\cmd.exe ---> Kennwort eingeben</p>
+                <h3>Programm als Administrator ausfuehren</h3>
+                <p>Programm.exe rechte Muastaste</p>
+                <p>Als Administrator ausfuehren</p>
+            </div>
+            <div class="box box3">
+                <h3>Windows Netzwerkbefehle</h3>
+                <h3>Konfiguration TCP/IP-Netzwerk</h3>
+                <p>ipconfig /all</p>
+                <h3>Routing anzeigen</h3> 
+                <p>route print</p>
+                <h3>Eine satische Route hinzufuegen</h3>
+                <p>route add Ziel-Netzwerk Subnetzmaske Gateway-Rechner-IP</p>
+                <p>z.B. route add 192.168.55.0 255.255.255.0 192.168.55.1</p>
+                <p>Soll die Route persistent eingetragen werden</p>
+                <p>route add -p Ziel-Netzwerk Subnetzmaske Gateway-Rechner-IP</p>
+                <p>z.B. route add -p 192.168.55.0 255.255.255.0 192.168.55.1</p>
+                <h3>Eine statische Route entfernen</h3>
+                <p>route delete Ziel-Netzwerk</p>
+                <p>z.B. route delete 192.168.55.0</p>
+                <h3>Belegte Ports anzeigen</h3>
+                <p>netstat -ano | find /i "Abhoeren" oder "Listen"</p>
+                <h3>MAC-Adressen der Netzwerkkarte anzeigen</h3>
+                <p>getmac</p>
+            </div>
+                
+            <div class="box box4">
+                <h3>NetworkManager Statische IP konfgurieren</h3>
+                <p>nmcli connection show</p>
+                <p>sudo nmcli connection modify UUID IPv4.address 192.168.55.123/24</p>
+                <p>sudo nmcli connection modify UUID IPv4.gateway 192.168.55.1</p>
+                <p>sudo nmcli connection modify UUID IPv4.dns 8.8.8.8</p>
+                <p>sudo nmcli connection modify UUID IPv4.method manuel</p>
+                <p>sudo nmcli connection down UUID</p>
+                <p>sudo nmcli connection up UUID</p>
+            </div>
+            <div class="box box5">
+                <h3>Allgemeine Windows-Befehle</h3>
+                <h3>Systemsteuerung aufrufen</h3> 
+                <p>control.exe</p>
+                <h3>Autostart-Manager aufrufen</h3>
+                <p>msconfig.exe</p>
+                <h3>Windows Dienste aufrufen</h3>
+                <p>services.msc</p>
+                <h3>Ueberpruefung der Systemdateien</h3>
+                <p>sfc /scannow</p>
+                <h3>MAC-Adressen der Netzwerkkarte anzeigen</h3>
+                <p>getmac</p>
+            </div>
+        </div>
+    </body>
+</html>

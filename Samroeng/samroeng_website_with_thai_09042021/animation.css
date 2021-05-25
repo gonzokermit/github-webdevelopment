@@ -1,0 +1,8 @@
+.scrollanimation {
+    opacity: 0;
+}
+
+.sichtbar {
+    opacity: 1;
+    transition: opacity 5s;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Percent Calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="wrapper">
+                <header class="ueberschrift">
+                    <h1>Prozent Rechner</h1>
+                </header>
+                <div class="input">
+                    <p>Grundwert</p>
+                    <div class="grundwert">
+                        <input type="text" class="input-grundwert" id="grundwert">
+                    </div>
+                    <p>Prozentsatz</p>
+                    <div class="prozentsatz">
+                        <input type="text" class="input-prozentsatz" id="prozentsatz">
+                    </div>
+                    <div class="btn">
+                        <button type="button" class="enter" id="enter">Berechnen</button>
+                        <button type="button" class="clear-input" id="clear-input">Clear Input</button>
+                    </div>
+                </div>
+                <div class="prozentwert">
+                    <p id="prozentwertToFixed">Ergebnis</p>
+                </div>
+                <div class="gesamtwert">
+                    <p id="gesamtwertToFixed"></p>
+                </div>
+            </div>
+        </div> 
+        <script src="app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+.howto-section{
+    padding: 100px 0;
+    background-color: #15171c;
+    color: #fff;
+}
+.howto-section h2{
+    font-size: 50px;
+    text-align: center;
+    color: #297ae3;
+}
+.howto-howtocard-container{
+    margin-top: 50px;
+    display: flex;
+    /*justify-content: center;*/
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-around;
+    align-items: center;
+}
+.howtocard{
+    width: 350px;
+    max-width: calc(90% - 40px);
+    padding: 60px 20px;
+    background-color: #232933;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    border: 1px solid #070707;
+    /*box-shadow: 0 4px 8px 0 #070707, 0 6px 20px 0 #070707;*/
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.74);
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.74);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.74);
+}
+.howtocard *{
+    text-align: center; /* der * steht fuer alle kind elemente der howtocard */
+    color: #b3b4b6;
+}
+.howtocard h3{
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+}
+.howtocard a{
+    width: min-content;
+    padding: 15px 40px;
+    margin: 0 auto; /*oben und unten 0, rechts und links auto*/
+    background-color: #297ae3;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 4px solid #297ae3;
+    transition: 0.5s ease-in-out;
+}
+.howtocard a:hover{
+    background: transparent;
+}
+@media(max-width:750px){
+    .howto-section h2{
+        font-size: 12vw;
+    }
+}

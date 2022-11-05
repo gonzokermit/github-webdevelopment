@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #323232;
+}
+.container{
+    max-width: 95%;
+    margin: 25px auto;
+}
+.container .container-h2{
+    margin-top: 25px;
+    padding: 20px 0;
+    font-size: 25px;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+}
+.container .bilder-container{
+    columns: 3 350px;
+    column-gap: 15px;
+}
+.container .bilder-container .bilder-box{
+    padding: 5px;
+    background-color: #000;
+    display: inline-block;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.container .bilder-container .bilder-box img{
+    width: 100%;
+    border-radius: 5px;
+}
+.container .bilder-container .bilder-box p{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+}

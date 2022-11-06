@@ -1,0 +1,88 @@
+/*----------bilder----------*/
+.bilder {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 80px;
+    background-color: #ff1970;
+    animation: color 9s infinite linear;
+}
+@media(min-width:750px) {
+    @keyframes color {
+        0%   { background-color: #ff1970; }
+        20%  { background-color: #b83784; }
+        40%  { background-color: #99316f; }
+        60%  { background-color: #FF4500; }
+        80%  { background-color: #b83784; }
+        100% { background-color: #ff1970; }
+    }
+}
+
+.bilder h2 {
+    margin-top: 1px;
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #070707;
+}
+.bilder-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.bilder-box {
+    min-width: 300px;
+    height: 400px;
+    margin: 20px;
+    border: 1px solid #fff;
+    box-shadow: 0 4px 8px 0 #070707, 0 6px 20px 0 #070707;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.bilder-box .button {
+    margin-top: 40px;
+}
+.bilder-box .button a {
+    font-size: 20px;
+    background-color: #DC143C;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+    text-shadow: 1px 1px 5px #070707;
+    box-shadow: inset 0px 0px 10px #DC143C;
+}
+.bilder-box .button a:hover {
+    background-color: #FF0000;
+    transition: 0.5s;
+}
+.bilder-box-image {
+    margin-top: 25px;
+    width: 200px;
+}
+.bilder-box-text {
+    margin-top: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #070707;
+}
+hr {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+@media(max-width: 750px) {
+    .bilder {
+        background-color: #b83784;
+    }
+    .bilder-container {
+        display: flex;
+        flex-direction: row;
+    }
+}
+/*----------bilder----------*/

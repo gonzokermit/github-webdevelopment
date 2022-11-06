@@ -1,0 +1,88 @@
+/*----------Aboutme----------*/
+.aboutme {
+    min-height: 600px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    /*background-color: purple;*/
+    background-image: url(img/green4_1280.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}  
+.aboutme h2 {
+    margin-top: 70px;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: flash 1s ease-in-out infinite alternate;
+}
+@keyframes flash {
+    from {
+      text-shadow:
+      0 0 5px #fc0303, 0 0 10px #fc0303,
+      0 0 20px #fc0303, 0 0 40px #fc0303;
+    }
+    to {
+      text-shadow:
+      0 0 5px #03cafc, 0 0 10px #03cafc,
+      0 0 20px #03cafc, 0 0 40px #03cafc;
+    }
+} 
+.aboutme-container {
+    width: 85%;
+    margin: auto;
+}
+.aboutme-container-text {
+    font-size: 23px;
+    font-weight: 400;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-align: center;
+    /*text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);*/
+    text-shadow: 0 2px 1px rgba(0,0,0,1), -1px 3px 1px rgba(0,0,0,1), -2px 5px 1px rgba(0,0,0,1);
+}
+/*.contentAppear {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transform: scale(0.1);
+    transition: all 1.5s ease-in-out;
+}
+.scrollAppear {
+    opacity: 1;
+    transform: scale(1);
+}*/
+.photo {
+    margin-top: 15px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    border-radius: 150px;
+    /*border: 2px solid #00e1ff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);*/
+    border: 1px solid #070707;
+    animation: flash-photo 1s ease-in-out infinite alternate;
+}
+@keyframes flash-photo {
+    from {
+      box-shadow:
+      0 0 5px #fc0303, 0 0 10px #fc0303,
+      0 0 20px #fc0303, 0 0 40px #fc0303;
+    }
+    to {
+      box-shadow:
+      0 0 5px #03cafc, 0 0 10px #03cafc,
+      0 0 20px #03cafc, 0 0 40px #03cafc;
+    }
+}
+/*----------Aboutme----------*/

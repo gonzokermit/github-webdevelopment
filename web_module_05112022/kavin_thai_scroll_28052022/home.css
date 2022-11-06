@@ -1,0 +1,53 @@
+/*----------Home----------*/
+.home {
+    width: 100%;
+    background-image: url(elephant_1280.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+.main-section {
+    width: 50%;
+    line-height: 1;
+    margin-bottom: 200px;
+}
+.main-content h1 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 2px #070707;
+}
+.main-content p {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-top: 10px;
+    text-shadow: 1px 1px 5px #070707;
+}
+.main-section .button {
+    margin-top: 25px;
+}
+.main-section .button a{
+    font-size: 20px;
+    background-color: #DC143C;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 5px 10px;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+    text-shadow: 1px 1px 5px #070707;
+    box-shadow: inset 0px 0px 10px #DC143C;
+}
+.main-section .button a:hover {
+    background-color: #FF0000;
+    transition: 0.5s;
+}
+/*----------Home----------*/
